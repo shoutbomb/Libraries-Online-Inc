@@ -12,7 +12,8 @@ SELECT
     to_char(rmi.record_last_updated_gmt,'MM-DD-YYYY') AS last_update, 
     'i' || rmi.record_num || 'a' AS item_no,
     'p' || rmp.record_num || 'a' AS patron_no, 
-    h.pickup_location_code AS pickup_location
+    h.pickup_location_code AS pickup_location,
+    h.id as hold_id
 
   FROM sierra_view.hold AS h
     RIGHT JOIN sierra_view.patron_record AS p
